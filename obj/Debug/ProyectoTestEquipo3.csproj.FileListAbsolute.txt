@@ -1,0 +1,10 @@
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.csprojAssemblyReference.cache
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.Form1.resources
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.Properties.Resources.resources
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.csproj.GenerateResource.cache
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\bin\Debug\ProyectoTestEquipo3.exe.config
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\bin\Debug\ProyectoTestEquipo3.exe
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\bin\Debug\ProyectoTestEquipo3.pdb
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.csproj.CopyComplete
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.exe
+C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.pdb
