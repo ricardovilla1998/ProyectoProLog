@@ -1,8 +1,16 @@
 :-dynamic respuesta/1.
+:-dynamic describir/1.
 :-dynamic pregunta/2.
 :-dynamic carrera/1.
 :-dynamic consultar/3.
 :-dynamic verificar/2.
+:-dynamic describirSistemas/1.
+:-dynamic describirAdmin/1.
+:-dynamic describirGastro/1.
+:-dynamic describirCivil/1.
+:-dynamic describirMedicina/1.
+:-dynamic describirArq/1.
+
 
 %RESPONDER
 respuesta(si).
@@ -10,6 +18,7 @@ respuesta(no).
 
 
 %Sistemas
+describir('Desarrollar aplicaciones').
 pregunta('¿Te gusta resolver problemas con la computadora?',sistemas).
 pregunta('¿Sabes usar bien una computadora?',sistemas).
 pregunta('¿Te gustaria crear un videojuego?',sistemas).
@@ -17,6 +26,7 @@ pregunta('¿Consideras que tienes un buen razonamiento lógico?',sistemas).
 pregunta('¿Te gusta el desarrollo de nuevas tecnologías?',sistemas).
 
 %Administracion
+describir('Podrás administrar tu propia empresa').
 pregunta('¿Tienes la capacidad de ser lider?',administracion).
 pregunta('¿Te gusta saber sobre temas económicos?',administracion).
 pregunta('¿Eres hábil con temas de estadística?',administracion).
@@ -24,6 +34,7 @@ pregunta('¿Consideras que tienes habilidad para negociar?',administracion).
 pregunta('¿Consideras que tienes habilidad para la contabilidad?',administracion).
 
 %Gastronomia
+describir('Aprenderás a cocinar ricos platillos').
 pregunta('¿Te gusta cocinar?',gastronomia).
 pregunta('¿Te interesa aprender sobre otras culturas?',gastronomia).
 pregunta('¿Te interesa aprender nuevos idiomas?',gastronomia).
@@ -32,6 +43,7 @@ pregunta('¿Consideras la cocina como un arte?',gastronomia).
 
 
 %Civil
+describir('Aprenderás a construir carreteras').
 pregunta('¿Te gusta la construccion?',civil).
 pregunta('¿Te gusta observar las obras de ingenieria de tu ciudad?',civil).
 pregunta('¿Te gusta el dibujo tecnico?',civil).
@@ -40,6 +52,7 @@ pregunta('¿Te gusta el calculo?',civil).
 
 
 %Medicina
+describir('Aprenderás a ser un buen doctor').
 pregunta('¿Te gusta ayudar a las personas?',medicina).
 pregunta('¿Te fascina la anatomia del cuerpo humano?',medicina).
 pregunta('¿Soportas ver heridas?',medicina).
@@ -47,6 +60,7 @@ pregunta('¿Te gusta curar a tus amigos o familiares?',medicina).
 pregunta('¿Estas al tanto de los nuevos tratamientos o medicamentos que salen con año?',medicina).
 
 %Arqueologia
+describir('Explorarás ruinas antiguas').
 pregunta('¿Te gustan las excavaciones?',arqueologia).
 pregunta('¿Te gusta la Historia?',arqueologia).
 pregunta('¿Te emocionas cuando te enteras de descubrimientos arqueologicos?',arqueologia).
@@ -59,7 +73,7 @@ cargar(A):-exists_file(A),consult(A).
 %VERIFICAR RESPUESTAS
 
 consultar(X,Y,Z):- pregunta(X,Y),respuesta(Z),verificar(Y,Z).
-verificar(Y,Z):- (
+deverificar(Y,Z):- (
 
     Y = sistemas , Z = si -> true;
     Y = administracion , Z = si -> true;
@@ -71,6 +85,7 @@ verificar(Y,Z):- (
 ).
 
 
+%OTRA FORMA DE VERIFICAR
 respuesta_T(Z):-Z=si ->true.
 verificaSistemas(Y,Z):-(Y = sistemas,Z=si ->true).
 verificaAdmin(Y,Z):-(Y =administracion  ,Z=si ->true).
@@ -78,5 +93,29 @@ verificaGastro(Y,Z):-(Y = gastronomia,Z=si ->true).
 verificaCivil(Y,Z):-(Y = civil,Z=si ->true).
 verificaMedicina(Y,Z):-(Y = medicina,Z=si ->true).
 verificaArq(Y,Z):-(Y = arqueologia,Z=si ->true).
+
+%DESCRIPCIONES
+describirSistemas(X):- X=sistemas -> describir('Desarrollar aplicaciones').
+describirAdmin(X):- X =administracion-> describir('Podrás administrar tu propia empresa').
+describirGastro(X):- X=gastronomia-> describir('Aprenderás a cocinar ricos platillos').
+describirCivil(X):- X=civil -> describir('Aprenderás a construir carreteras').
+describirMedicina(X):- X=medicina -> describir('Aprenderás a ser un buen doctor').
+describirArq(X):- X=arqueologia-> describir('Explorarás ruinas antiguas').
+
+%CALIFICACIONES
+calif(X):- X=5 -> true.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

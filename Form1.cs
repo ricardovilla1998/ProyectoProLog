@@ -181,7 +181,7 @@ namespace ProyectoTestEquipo3
                     cargarPreguntas("arqueologia");
                     break;
             }
-
+            PlEngine.PlCleanup();
 
         }
 
