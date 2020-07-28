@@ -70,3 +70,13 @@ verificar(Y,Z):- (
 
 ).
 
+
+respuesta_T(Z):-Z=si ->true.
+verificaSistemas(Y,Z):-(Y = sistemas,Z=si ->true).
+verificaAdmin(Y,Z):-(Y =administracion  ,Z=si ->true).
+verificaGastro(Y,Z):-(Y = gastronomia,Z=si ->true).
+verificaCivil(Y,Z):-(Y = civil,Z=si ->true).
+verificaMedicina(Y,Z):-(Y = medicina,Z=si ->true).
+verificaArq(Y,Z):-(Y = arqueologia,Z=si ->true).
+
+

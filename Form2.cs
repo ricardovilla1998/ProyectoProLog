@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SbsSW.SwiPlCs;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +19,22 @@ namespace ProyectoTestEquipo3
            
         }
 
+        public string recibirDatos;
         private void button2_Click(object sender, EventArgs e)
         {
-
+            Form1 F = new Form1();
+            limpiarArchivo();
+            F.Visible = true;
+            this.Visible = false;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            Environment.SetEnvironmentVariable("Path", @"C:\\Program Files (x86)\\swipl\bin");
+            limpiarArchivo();
+            Form1 f = new Form1();
+            label1.Text = recibirDatos;
+            f.carreraElegida = "";
 
         }
 
@@ -36,16 +46,22 @@ namespace ProyectoTestEquipo3
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 F = new Form1();
-           
-            //MessageBox.Show(F.carreraElegida.ToString());
-            label1.Text = F.carreraElegida;
-            F.carreraElegida = "";
+            limpiarArchivo();
+            Application.Exit();
+
+
         }
 
         private void Form2_Shown(Object sender, EventArgs e)
         {
 
             MessageBox.Show("Hola mundo");
+        }
+
+        private void limpiarArchivo()
+        {
+            string[] p = { "-q", "-f", @"test.pl" };
+            PlEngine.PlCleanup();
         }
 
     }

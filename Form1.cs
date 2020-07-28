@@ -16,8 +16,9 @@ namespace ProyectoTestEquipo3
         public Form1()
         {
             InitializeComponent();
+            
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             btn_atras.Enabled = false;
@@ -27,10 +28,11 @@ namespace ProyectoTestEquipo3
             //Cargar archivo prolog
             string[] p = { "-q", "-f", @"test.pl" };
             PlEngine.Initialize(p);
+            PlQuery cargar = new PlQuery("cargar('test.bd')");
+            cargar.NextSolution();
             cargarPreguntas("sistemas");
-           //PlQuery cargar = new PlQuery("cargar('test.bd')");
-           //cargar.NextSolution();
-
+            
+            //Inicializar lista de puntos
             puntos.Add(0);
             puntos.Add(0);
             puntos.Add(0);
@@ -44,7 +46,7 @@ namespace ProyectoTestEquipo3
         int click = 0;
         String carreraActual = "";
         List<int> puntos = new List<int>();
-        public String carreraElegida = "";
+        public string carreraElegida;
 
 
 
@@ -182,7 +184,7 @@ namespace ProyectoTestEquipo3
 
 
         }
-        
+
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             guardarPuntos();
@@ -191,7 +193,7 @@ namespace ProyectoTestEquipo3
             int mayor = puntos.Max();
             List<int> ganadores = new List<int>();
 
-            for(int i = 0; i < puntos.Count; i++)
+            for (int i = 0; i < puntos.Count; i++)
             {
                 if (puntos[i] == mayor)
                 {
@@ -216,14 +218,15 @@ namespace ProyectoTestEquipo3
                 }
             }
 
-            MessageBox.Show("Su carrera o carreras ideales son:\n" + carreraElegida);
-            label1.Text = label1.Text+"\n"+carreraElegida;
-            
+            //MessageBox.Show("Su carrera o carreras ideales son:\n" + carreraElegida);
+            //label1.Text = label1.Text + "\n" + carreraElegida;
+
             //carreraElegida = "";
-           
-            Form2 F = new Form2();
-            
-            F.Show();
+
+            Form2 f2 = new Form2();
+            this.Visible = false;
+            f2.recibirDatos = carreraElegida;
+            f2.Show();
         }//btn_finalizar
 
 
@@ -254,6 +257,7 @@ namespace ProyectoTestEquipo3
             label_p4_sistemas.Text = Pa[3];
             label_p5_sistemas.Text = Pa[4];
             contador = 0;
+            resetearRadios();
 
 
         }//cargarPreguntas
@@ -302,6 +306,16 @@ namespace ProyectoTestEquipo3
 
         }//responder
 
+        private void resetearRadios()
+        {
+            radio1_si.Checked = true;
+            radio2_si.Checked = true;
+            radio3_si.Checked = true;
+            radio4_si.Checked = true;
+            radio5_si.Checked = true;
+
+        }//resetearRadios
+
 
         //Mediante la propiedad TabIndex, obtiene el indice y el texto de el Label
         private static string obtenerElementoPorIndice(Control.ControlCollection controls, int index)
@@ -325,8 +339,16 @@ namespace ProyectoTestEquipo3
             }
         }//acumulaPuntos
 
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+           
+            PlEngine.PlCleanup();
+            Application.Exit();
+        }
 
+        private void label1_Click_1(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
