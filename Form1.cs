@@ -28,8 +28,8 @@ namespace ProyectoTestEquipo3
             string[] p = { "-q", "-f", @"test.pl" };
             PlEngine.Initialize(p);
             cargarPreguntas("sistemas");
-            //PlQuery cargar = new PlQuery("cargar('test.bd')");
-            //cargar.NextSolution();
+           //PlQuery cargar = new PlQuery("cargar('test.bd')");
+           //cargar.NextSolution();
 
             puntos.Add(0);
             puntos.Add(0);
@@ -44,7 +44,9 @@ namespace ProyectoTestEquipo3
         int click = 0;
         String carreraActual = "";
         List<int> puntos = new List<int>();
-        
+        public String carreraElegida = "";
+
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -180,7 +182,7 @@ namespace ProyectoTestEquipo3
 
 
         }
-        String carreraElegida = "";
+        
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             guardarPuntos();
@@ -203,19 +205,25 @@ namespace ProyectoTestEquipo3
 
                 switch (ganadores[i])
                 {
-                    case 0: carreraElegida += "Ing Sistemas,"; break;
-                    case 1: carreraElegida += "Lic Administración,"; break;
-                    case 2: carreraElegida += "Gastronomia,"; break;
-                    case 3: carreraElegida += "Ing Civil,"; break;
-                    case 4: carreraElegida += "Medicina,"; break;
-                    case 5: carreraElegida += "Arqueologia,"; break;
+                    case 0: carreraElegida += "Ing Sistemas\n"; break;
+                    case 1: carreraElegida += "Lic Administración\n"; break;
+                    case 2: carreraElegida += "Gastronomia\n"; break;
+                    case 3: carreraElegida += "Ing Civil\n"; break;
+                    case 4: carreraElegida += "Medicina\n"; break;
+                    case 5: carreraElegida += "Arqueologia\n"; break;
 
 
                 }
             }
 
-            MessageBox.Show("Su carrera o carreras ideales son: " + carreraElegida);
-            carreraElegida = "";
+            MessageBox.Show("Su carrera o carreras ideales son:\n" + carreraElegida);
+            label1.Text = label1.Text+"\n"+carreraElegida;
+            
+            //carreraElegida = "";
+           
+            Form2 F = new Form2();
+            
+            F.Show();
         }//btn_finalizar
 
 
