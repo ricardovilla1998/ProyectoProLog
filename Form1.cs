@@ -188,17 +188,30 @@ namespace ProyectoTestEquipo3
         private void btn_finalizar_Click(object sender, EventArgs e)
         {
             guardarPuntos();
-
+           
             //Verificar que carrera tuvo más puntos
             int mayor = puntos.Max();
             List<int> ganadores = new List<int>();
-
+            List<String> carrerasGanadoras = new List<String>();
+            carrerasGanadoras.Add("Ing Sistemas");
+            carrerasGanadoras.Add("Lic Administración");
+            carrerasGanadoras.Add("Gastronomia");
+            carrerasGanadoras.Add("Ing Civil");
+            carrerasGanadoras.Add("Medicina");
+            carrerasGanadoras.Add("Arqueologia");
             for (int i = 0; i < puntos.Count; i++)
             {
                 if (puntos[i] == mayor)
                 {
                     ganadores.Add(i);
                 }
+                PlQuery puntoMax = new PlQuery("calif("+puntos[i]+")");
+          
+                if (puntoMax.NextSolution())
+                {
+                    carrerasGanadoras[i]+=" ¡Esta es tu carrera!";
+                }
+
             }
 
 
@@ -207,12 +220,12 @@ namespace ProyectoTestEquipo3
 
                 switch (ganadores[i])
                 {
-                    case 0: carreraElegida += "Ing Sistemas\n"; break;
-                    case 1: carreraElegida += "Lic Administración\n"; break;
-                    case 2: carreraElegida += "Gastronomia\n"; break;
-                    case 3: carreraElegida += "Ing Civil\n"; break;
-                    case 4: carreraElegida += "Medicina\n"; break;
-                    case 5: carreraElegida += "Arqueologia\n"; break;
+                    case 0: carreraElegida += carrerasGanadoras[0]+"\n"; break;
+                    case 1: carreraElegida += carrerasGanadoras[1]+"\n"; break;
+                    case 2: carreraElegida += carrerasGanadoras[2]+"\n"; break;
+                    case 3: carreraElegida += carrerasGanadoras[3]+"\n"; break;
+                    case 4: carreraElegida += carrerasGanadoras[4]+"\n"; break;
+                    case 5: carreraElegida += carrerasGanadoras[5]+"\n"; break;
 
 
                 }
@@ -278,15 +291,20 @@ namespace ProyectoTestEquipo3
                 String pregunta = String.Format("consultar('{0}',{1},{2})", obtenerElementoPorIndice(this.Controls, i + 1), carreraActual, respondidos[i]);
 
                 //MessageBox.Show(pregunta);
+            
                 PlQuery consulta = new PlQuery(pregunta);
                 // MessageBox.Show(consulta.NextSolution().ToString());
                 // MessageBox.Show(carreraActual + "");
+              
                 if (consulta.NextSolution())
                 {
                     //Acumula puntos dependiendo la carrera
+                    
                     acumulaPuntos(carreraActual);
                 }
+                
             }
+            
         }//guardarPuntos
 
 
@@ -350,5 +368,39 @@ namespace ProyectoTestEquipo3
         {
 
         }
+
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+            int cont = 0;
+            string descCarreras = "";
+            PlQuery consultaSistemas = new PlQuery("describirSistemas(sistemas)");
+            PlQuery consultaAdmin = new PlQuery("describirAdmin(administracion)");
+            PlQuery consultaGastro = new PlQuery("describirGastro(gastronomia)");
+            PlQuery consultaCivil = new PlQuery("describirCivil(civil)");
+            PlQuery consultaMed = new PlQuery("describirMedicina(medicina)");
+            PlQuery consultaArq = new PlQuery("describirArq(arqueologia)");
+
+            if (consultaSistemas.NextSolution() && consultaAdmin.NextSolution() && consultaGastro.NextSolution() && consultaCivil.NextSolution() && consultaMed.NextSolution() && consultaArq.NextSolution())
+            {
+                PlQuery consultaDesc = new PlQuery("describir(X)");
+
+                foreach (PlQueryVariables z in consultaDesc.SolutionVariables)
+                {
+                    switch (cont)
+                    {
+                        case 0: descCarreras += "Sistemas => " + z["X"].ToString() + "\n"; break;
+                        case 1: descCarreras += "Administración => " + z["X"].ToString() + "\n"; break;
+                        case 2: descCarreras += "Gastronomia => " + z["X"].ToString() + "\n"; break;
+                        case 3: descCarreras += "Civil => " + z["X"].ToString() + "\n"; break;
+                        case 4: descCarreras += "Medicina => " + z["X"].ToString() + "\n"; break;
+                        case 5: descCarreras += "Arquealogia => " + z["X"].ToString() + "\n"; break;
+                    }
+
+                    cont++;
+                }
+            }
+            MessageBox.Show(descCarreras,"Información de carreras",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        } 
+     
     }
 }

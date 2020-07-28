@@ -53,6 +53,7 @@
             this.btn_finalizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_info = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -302,7 +303,7 @@
             // btn_atras
             // 
             this.btn_atras.Location = new System.Drawing.Point(67, 519);
-            this.btn_atras.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_atras.Margin = new System.Windows.Forms.Padding(4);
             this.btn_atras.Name = "btn_atras";
             this.btn_atras.Size = new System.Drawing.Size(121, 41);
             this.btn_atras.TabIndex = 24;
@@ -338,7 +339,7 @@
             // btn_salir
             // 
             this.btn_salir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btn_salir.Location = new System.Drawing.Point(589, 43);
+            this.btn_salir.Location = new System.Drawing.Point(620, 49);
             this.btn_salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_salir.Name = "btn_salir";
             this.btn_salir.Size = new System.Drawing.Size(125, 46);
@@ -347,11 +348,24 @@
             this.btn_salir.UseVisualStyleBackColor = true;
             this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
+            // btn_info
+            // 
+            this.btn_info.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btn_info.Location = new System.Drawing.Point(477, 49);
+            this.btn_info.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(125, 46);
+            this.btn_info.TabIndex = 28;
+            this.btn_info.Text = "Información";
+            this.btn_info.UseVisualStyleBackColor = true;
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 670);
+            this.Controls.Add(this.btn_info);
             this.Controls.Add(this.btn_salir);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_finalizar);
@@ -415,6 +429,7 @@
         private System.Windows.Forms.Button btn_finalizar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_salir;
+        private System.Windows.Forms.Button btn_info;
     }
 }
 
