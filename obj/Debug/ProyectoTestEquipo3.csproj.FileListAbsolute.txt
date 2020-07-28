@@ -8,3 +8,13 @@ C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\bin\Debug\
 C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.csproj.CopyComplete
 C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.exe
 C:\Users\ricar\Documents\Semestre 8\PROLOG Verano\ProyectoTestEquipo3\obj\Debug\ProyectoTestEquipo3.pdb
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\bin\Debug\ProyectoTestEquipo3.exe.config
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\bin\Debug\ProyectoTestEquipo3.exe
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\bin\Debug\ProyectoTestEquipo3.pdb
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.csprojAssemblyReference.cache
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.Form1.resources
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.Properties.Resources.resources
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.csproj.GenerateResource.cache
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.csproj.CopyComplete
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.exe
+C:\Users\IRMIN\Desktop\Tecnologico\Verano Noveno semestre\Prolog\Actividades\Proyecto\obj\Debug\ProyectoTestEquipo3.pdb
