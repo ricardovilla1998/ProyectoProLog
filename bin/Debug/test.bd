@@ -62,11 +62,11 @@ consultar(X,Y,Z):- pregunta(X,Y),respuesta(Z),verificar(Y,Z).
 verificar(Y,Z):- (
 
     Y = sistemas , Z = si -> true;
-    X = administracion , Y = si -> true;
-    X = gastronomia , Y = si -> true;
-    X = civil , Y = si -> true;
-    X = medicina , Y = si -> true;
-    X = arqueologia , Y = si -> true
+    Y = administracion , Z = si -> true;
+    Y = gastronomia , Z = si -> true;
+    Y = civil , Z = si -> true;
+    Y = medicina , Z = si -> true;
+    Y = arqueologia , Z = si -> true
 
 ).
 

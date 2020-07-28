@@ -4,8 +4,6 @@
 :-dynamic consultar/3.
 :-dynamic verificar/2.
 
-
-
 %RESPONDER
 respuesta(si).
 respuesta(no).
